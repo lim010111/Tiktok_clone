@@ -15,12 +15,12 @@ class SignUpScreen extends StatelessWidget {
             children: [
               SizedBox(height: 50.h),
               const Text(
-                "Sign up for TikTok",
+                "Log in to TikTok",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: 10.h),
               const Text(
-                "Create a profile, follow other accounts, make your own videos, and more.",
+                "Manage your account, check notifications, comment on videos, and more.",
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
               SizedBox(height: 10.h),
@@ -65,11 +65,11 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              "Already have an account?",
+              "Don't have an account?",
             ),
             SizedBox(width: 5.w),
             Text(
-              'Log in',
+              'Sign up',
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
                 fontWeight: FontWeight.w700,
