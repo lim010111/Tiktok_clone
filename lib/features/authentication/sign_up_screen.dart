@@ -1,9 +1,22 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
+import 'package:tiktok_clone/features/authentication/login_screen.dart';
+import 'package:tiktok_clone/features/authentication/widgets/auth_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
+
+  void onLoginTap(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LoginScreen(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,33 +39,25 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 10.h),
               Column(
                 children: [
-                  Container(
-                    decoration: const BoxDecoration(boxShadow: []),
-                    child: const Row(
-                      children: [
-                        Icon(Icons.abc),
-                        Text('Use phone or email'),
-                      ],
-                    ),
+                  const AuthButton(
+                    faIcon: FaIcon(FontAwesomeIcons.user),
+                    text: 'Use phone or email',
                   ),
-                  const Row(
-                    children: [
-                      Icon(Icons.abc),
-                      Text('Use phone or email'),
-                    ],
+                  SizedBox(height: 10.h),
+                  const AuthButton(
+                    faIcon: FaIcon(FontAwesomeIcons.facebook),
+                    text: 'Continue with Facebook',
                   ),
-                  const Row(
-                    children: [
-                      Icon(Icons.abc),
-                      Text('Use phone or email'),
-                    ],
+                  SizedBox(height: 10.h),
+                  const AuthButton(
+                    faIcon: FaIcon(FontAwesomeIcons.apple),
+                    text: 'Continue with Apple',
                   ),
-                  const Row(
-                    children: [
-                      Icon(Icons.abc),
-                      Text('Use phone or email'),
-                    ],
-                  )
+                  SizedBox(height: 10.h),
+                  const AuthButton(
+                    faIcon: FaIcon(FontAwesomeIcons.google),
+                    text: 'Continue with Google',
+                  ),
                 ],
               ),
             ],
@@ -68,11 +73,14 @@ class SignUpScreen extends StatelessWidget {
               "Already have an account?",
             ),
             SizedBox(width: 5.w),
-            Text(
-              'Log in',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w700,
+            GestureDetector(
+              onTap: () => onLoginTap(context),
+              child: Text(
+                'Log in',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
