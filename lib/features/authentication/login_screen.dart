@@ -33,23 +33,27 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 10.h),
               Column(
                 children: [
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.user),
+                  AuthButton(
+                    onTapFunc: (context) {},
+                    faIcon: const FaIcon(FontAwesomeIcons.user),
                     text: 'Use phone or email',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.facebook),
+                  AuthButton(
+                    onTapFunc: (context) {},
+                    faIcon: const FaIcon(FontAwesomeIcons.facebook),
                     text: 'Continue with Facebook',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.apple),
+                  AuthButton(
+                    onTapFunc: (context) {},
+                    faIcon: const FaIcon(FontAwesomeIcons.apple),
                     text: 'Continue with Apple',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.google),
+                  AuthButton(
+                    onTapFunc: (context) {},
+                    faIcon: const FaIcon(FontAwesomeIcons.google),
                     text: 'Continue with Google',
                   ),
                 ],

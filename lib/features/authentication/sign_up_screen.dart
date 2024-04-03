@@ -1,19 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/constants/sizes.dart';
+import 'package:tiktok_clone/features/authentication/email_screen.dart';
 import 'package:tiktok_clone/features/authentication/login_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/auth_button.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  void onLoginTap(BuildContext context) {
+  void _onLoginTap(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const LoginScreen(),
+      ),
+    );
+  }
+
+  void _onEmailTap(BuildContext context) {
+    Navigator.of(context).push(
+      CupertinoPageRoute(
+        builder: (context) => const EmailScreen(),
       ),
     );
   }
@@ -39,23 +49,27 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 10.h),
               Column(
                 children: [
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.user),
+                  AuthButton(
+                    onTapFunc: _onEmailTap,
+                    faIcon: const FaIcon(FontAwesomeIcons.user),
                     text: 'Use phone or email',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.facebook),
+                  AuthButton(
+                    onTapFunc: _onEmailTap,
+                    faIcon: const FaIcon(FontAwesomeIcons.facebook),
                     text: 'Continue with Facebook',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.apple),
+                  AuthButton(
+                    onTapFunc: _onEmailTap,
+                    faIcon: const FaIcon(FontAwesomeIcons.apple),
                     text: 'Continue with Apple',
                   ),
                   SizedBox(height: 10.h),
-                  const AuthButton(
-                    faIcon: FaIcon(FontAwesomeIcons.google),
+                  AuthButton(
+                    onTapFunc: _onEmailTap,
+                    faIcon: const FaIcon(FontAwesomeIcons.google),
                     text: 'Continue with Google',
                   ),
                 ],
@@ -65,6 +79,7 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.grey.withOpacity(0.01),
         elevation: 2,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +89,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             SizedBox(width: 5.w),
             GestureDetector(
-              onTap: () => onLoginTap(context),
+              onTap: () => _onLoginTap(context),
               child: Text(
                 'Log in',
                 style: TextStyle(
