@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/features/authentication/widgets/form_button.dart';
+import 'package:tiktok_clone/features/birthday_screen.dart';
 
 class PasswordScreen extends StatefulWidget {
   const PasswordScreen({super.key});
@@ -66,7 +67,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
     if (_password.isEmpty || passwordLevel != 2) return;
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => const PasswordScreen(),
+        builder: (context) => const BirthdayScreen(),
       ),
     );
   }
@@ -172,7 +173,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 ],
               ),
               const SizedBox(height: 40),
-              FormButton(disabled: passwordLevel != 2)
+              GestureDetector(
+                onTap: () => _onSubmit(),
+                child: FormButton(disabled: passwordLevel != 2),
+              )
             ],
           ),
         ),
