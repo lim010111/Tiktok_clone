@@ -21,7 +21,6 @@ class _EmailScreenState extends State<EmailScreen> {
     super.initState();
 
     _emailController.addListener(() {
-      print(_emailController.text);
       setState(() {
         _email = _emailController.text;
       });
@@ -80,8 +79,7 @@ class _EmailScreenState extends State<EmailScreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const SizedBox(height: 7),
-              const SizedBox(height: 10),
+              const SizedBox(height: 18),
               TextField(
                 controller: _emailController,
                 onEditingComplete: _onSubmit,
