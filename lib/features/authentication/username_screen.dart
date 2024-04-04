@@ -94,7 +94,10 @@ class _UsernameScreenState extends State<UsernameScreen> {
             const SizedBox(height: 30),
             GestureDetector(
               onTap: () => _onNextTap(),
-              child: FormButton(disabled: _username.isEmpty),
+              child: FormButton(
+                disabled: _username.isEmpty,
+                text: "Next",
+              ),
             ),
           ],
         ),

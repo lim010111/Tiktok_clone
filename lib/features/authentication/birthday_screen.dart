@@ -92,7 +92,10 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
             const SizedBox(height: 30),
             GestureDetector(
               onTap: () => _onNextTap(),
-              child: const FormButton(disabled: false),
+              child: const FormButton(
+                disabled: false,
+                text: "Next",
+              ),
             ),
           ],
         ),

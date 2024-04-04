@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tiktok_clone/constants/sizes.dart';
 import 'package:tiktok_clone/features/authentication/username_screen.dart';
 import 'package:tiktok_clone/features/authentication/login_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/auth_button.dart';
@@ -33,13 +30,18 @@ class SignUpScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: Sizes.size24),
+          padding: EdgeInsets.symmetric(
+            horizontal: 30.w,
+          ),
           child: Column(
             children: [
               SizedBox(height: 50.h),
               const Text(
                 "Sign up for TikTok",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
               SizedBox(height: 10.h),
               const Text(
@@ -52,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                   AuthButton(
                     onTapFunc: _onEmailTap,
                     faIcon: const FaIcon(FontAwesomeIcons.user),
-                    text: 'Use phone or email',
+                    text: 'Use email and password',
                   ),
                   SizedBox(height: 10.h),
                   AuthButton(

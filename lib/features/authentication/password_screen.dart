@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/features/authentication/widgets/form_button.dart';
-import 'package:tiktok_clone/features/birthday_screen.dart';
+import 'package:tiktok_clone/features/authentication/birthday_screen.dart';
 
 class PasswordScreen extends StatefulWidget {
   const PasswordScreen({super.key});
@@ -26,7 +24,6 @@ class _PasswordScreenState extends State<PasswordScreen> {
 
     _passwordController.addListener(() {
       setState(() {
-        print(passwordLevel);
         _password = _passwordController.text;
         _isPasswordValid();
       });
@@ -175,7 +172,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
               const SizedBox(height: 40),
               GestureDetector(
                 onTap: () => _onSubmit(),
-                child: FormButton(disabled: passwordLevel != 2),
+                child: FormButton(
+                  disabled: passwordLevel != 2,
+                  text: "Next",
+                ),
               )
             ],
           ),

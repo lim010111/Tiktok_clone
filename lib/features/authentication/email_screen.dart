@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tiktok_clone/features/authentication/password_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/form_button.dart';
@@ -106,7 +105,9 @@ class _EmailScreenState extends State<EmailScreen> {
               GestureDetector(
                 onTap: () => _onSubmit(),
                 child: FormButton(
-                    disabled: _email.isEmpty || _isEmailValid() != null),
+                  disabled: _email.isEmpty || _isEmailValid() != null,
+                  text: "Next",
+                ),
               ),
             ],
           ),
