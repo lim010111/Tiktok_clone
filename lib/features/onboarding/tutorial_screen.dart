@@ -47,7 +47,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
     }
   }
 
-  void _onPanMove(DragEndDetails details) {
+  void _onPanEnd(DragEndDetails details) {
     if (_direction == Direction.right) {
       setState(() {
         _showingPage = Page.second;
@@ -63,7 +63,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onPanUpdate: _onPanUpdate,
-      onPanEnd: _onPanMove,
+      onPanEnd: _onPanEnd,
       child: Scaffold(
         body: AnimatedCrossFade(
           firstChild: Padding(
