@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tiktok_clone/features/authentication/sign_up_screen.dart';
+import 'package:tiktok_clone/features/onboarding/interests_screen.dart';
 
 void main() {
   runApp(
@@ -22,8 +22,12 @@ class TikTokApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
+          centerTitle: true,
           elevation: 0,
+          shadowColor: Colors.white,
           backgroundColor: Colors.white,
+          foregroundColor: Colors.white,
+          surfaceTintColor: Colors.white,
           titleTextStyle: TextStyle(
             color: Colors.black,
             fontSize: 18,
@@ -31,12 +35,11 @@ class TikTokApp extends StatelessWidget {
           ),
         ),
         bottomAppBarTheme: const BottomAppBarTheme(
-          elevation: 0,
           color: Colors.white,
         ),
         primaryColor: const Color(0xFFE9435A),
       ),
-      home: const SignUpScreen(),
+      home: const InterestsScreen(),
     );
   }
 }

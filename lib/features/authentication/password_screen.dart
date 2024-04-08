@@ -175,6 +175,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 child: FormButton(
                   disabled: passwordLevel != 2,
                   text: "Next",
+                  // witdhFactor: 1,
                 ),
               )
             ],

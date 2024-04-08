@@ -107,6 +107,7 @@ class _EmailScreenState extends State<EmailScreen> {
                 child: FormButton(
                   disabled: _email.isEmpty || _isEmailValid() != null,
                   text: "Next",
+                  // witdhFactor: 1,
                 ),
               ),
             ],

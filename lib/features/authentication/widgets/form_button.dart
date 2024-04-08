@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 class FormButton extends StatelessWidget {
   final bool disabled;
   final String text;
+  // final double witdhFactor;/
 
   const FormButton({
     super.key,
     required this.disabled,
     required this.text,
+    // required this.witdhFactor,
   });
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tiktok_clone/features/authentication/email_screen.dart';
 import 'package:tiktok_clone/features/authentication/widgets/form_button.dart';
@@ -97,6 +96,7 @@ class _UsernameScreenState extends State<UsernameScreen> {
               child: FormButton(
                 disabled: _username.isEmpty,
                 text: "Next",
+                // witdhFactor: 1,
               ),
             ),
           ],
