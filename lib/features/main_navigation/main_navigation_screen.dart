@@ -1,8 +1,5 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/features/main_navigation/widgets/nav_tab.dart';
 import 'package:tiktok_clone/features/onboarding/widgets/post_video_button.dart';
@@ -19,10 +16,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
   int loadingTime = 1;
   bool isMoved = false;
-
-  final List<Widget> _screens = [
-    const StfWidget(),
-  ];
 
   void _onTap(int index) {
     setState(() {
