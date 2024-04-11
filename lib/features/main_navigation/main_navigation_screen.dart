@@ -1,7 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tiktok_clone/features/main_navigation/widgets/nav_tab.dart';
 import 'package:tiktok_clone/features/onboarding/widgets/post_video_button.dart';
@@ -16,6 +17,8 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
+  int loadingTime = 1;
+  bool isMoved = false;
 
   final List<Widget> _screens = [
     const StfWidget(),
@@ -28,14 +31,31 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 
   void _onPostVideoButtonTap() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-          builder: (context) => Scaffold(
-                appBar: AppBar(),
-              ),
-          fullscreenDialog: true),
-    );
+    Timer.periodic(const Duration(milliseconds: 700), (timer) {
+      if (timer.tick == 1) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => Scaffold(
+                    appBar: AppBar(),
+                  ),
+              fullscreenDialog: true),
+        );
+        timer.cancel();
+      }
+    });
+  }
+
+  void _onTapUp() {
+    setState(() {
+      isMoved = false;
+    });
+  }
+
+  void _onTapDown() {
+    setState(() {
+      isMoved = true;
+    });
   }
 
   @override
@@ -71,6 +91,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               NavTap(
                 isSelected: _currentIndex == 0,
@@ -86,13 +107,17 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                 selectedIcon: FontAwesomeIcons.solidCompass,
                 onTap: () => _onTap(1),
               ),
-              InkWell(
-                splashColor: Colors.lightGreen,
-                onTap: () {
-                  setState(() {});
+              GestureDetector(
+                onTapDown: (details) => _onTapDown(),
+                onTapUp: (details) {
+                  _onTapUp();
                   _onPostVideoButtonTap();
                 },
-                child: const PostVideoButton(),
+                child: AnimatedScale(
+                  scale: isMoved ? 0.85 : 1,
+                  duration: const Duration(milliseconds: 220),
+                  child: const PostVideoButton(),
+                ),
               ),
               NavTap(
                 isSelected: _currentIndex == 3,
