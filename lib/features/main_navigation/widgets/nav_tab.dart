@@ -9,12 +9,14 @@ class NavTap extends StatelessWidget {
     required this.selectedIcon,
     required this.isSelected,
     required this.onTap,
+    required this.color,
   });
 
   final String name;
   final IconData icon;
   final IconData selectedIcon;
   final bool isSelected;
+  final Color color;
 
   final Function onTap;
 
@@ -30,13 +32,13 @@ class NavTap extends StatelessWidget {
             children: [
               FaIcon(
                 isSelected ? selectedIcon : icon,
-                color: Colors.white,
+                color: color,
               ),
               const SizedBox(height: 5),
               Text(
                 name,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: color,
                 ),
               ),
             ],

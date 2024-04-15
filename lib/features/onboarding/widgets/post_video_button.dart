@@ -3,7 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PostVideoButton extends StatefulWidget {
-  const PostVideoButton({super.key});
+  const PostVideoButton({
+    super.key,
+    required this.isHome,
+  });
+
+  final bool isHome;
 
   @override
   State<PostVideoButton> createState() => _PostVideoButtonState();
@@ -41,15 +46,16 @@ class _PostVideoButtonState extends State<PostVideoButton> {
         ),
         Container(
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: widget.isHome ? Colors.white : Colors.black,
             borderRadius: BorderRadius.circular(12),
           ),
           padding: EdgeInsets.symmetric(
             horizontal: 10.w,
             vertical: 5.h,
           ),
-          child: const FaIcon(
+          child: FaIcon(
             FontAwesomeIcons.plus,
+            color: widget.isHome ? Colors.black : Colors.white,
           ),
         ),
       ],
