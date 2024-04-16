@@ -21,11 +21,12 @@ class _PostVideoButtonState extends State<PostVideoButton> {
       clipBehavior: Clip.none,
       children: [
         Positioned(
-          left: -3.4.w,
+          left: -4.6,
+          bottom: 0.8,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 300),
-            height: 28.7.h,
-            width: 20.w,
+            height: 37,
+            width: 25,
             decoration: BoxDecoration(
               color: const Color(0xff76D7E7),
               borderRadius: BorderRadius.circular(12),
@@ -33,11 +34,12 @@ class _PostVideoButtonState extends State<PostVideoButton> {
           ),
         ),
         Positioned(
-          left: 17.1.w,
+          left: 29.6,
+          bottom: 0.8,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 300),
-            height: 28.7.h,
-            width: 20.w,
+            height: 37,
+            width: 25,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(12),
@@ -49,9 +51,9 @@ class _PostVideoButtonState extends State<PostVideoButton> {
             color: widget.isHome ? Colors.white : Colors.black,
             borderRadius: BorderRadius.circular(12),
           ),
-          padding: EdgeInsets.symmetric(
-            horizontal: 10.w,
-            vertical: 5.h,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 14.5,
+            vertical: 6.8,
           ),
           child: FaIcon(
             FontAwesomeIcons.plus,
