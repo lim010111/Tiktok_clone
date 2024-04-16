@@ -257,18 +257,18 @@ packages:
     dependency: transitive
     description:
       name: video_player_android
-      sha256: "4dd9b8b86d70d65eecf3dcabfcdfbb9c9115d244d022654aba49a00336d540c2"
+      sha256: "821cff3446bbde255e8d03c12fe1f9810c69fee2c26c394545b13d824ba63c2e"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.12"
+    version: "2.4.13"
   video_player_avfoundation:
     dependency: transitive
     description:
       name: video_player_avfoundation
-      sha256: "309e3962795e761be010869bae65c0b0e45b5230c5cee1bec72197ca7db040ed"
+      sha256: "00c49b1d68071341397cf760b982c1e26ed9232464c8506ee08378a5cca5070d"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.6"
+    version: "2.5.7"
   video_player_platform_interface:
     dependency: transitive
     description:
