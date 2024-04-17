@@ -44,7 +44,7 @@ class _ActivityScreenState extends State<ActivityScreen>
 
   late final AnimationController _animationController = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 100),
+    duration: const Duration(milliseconds: 400),
   );
 
   late final Animation<double> _arrowAnimation =
@@ -54,17 +54,28 @@ class _ActivityScreenState extends State<ActivityScreen>
       Tween(begin: const Offset(0, -1), end: const Offset(0, 0))
           .animate(_animationController);
 
+  late final Animation<Color?> _barrierAnimation = ColorTween(
+          begin: Colors.black.withOpacity(0),
+          end: Colors.black.withOpacity(0.5))
+      .animate(_animationController);
+
+  bool _showbarrier = false;
+
   void _onDismissed(String notification) {
     _notifications.remove(notification);
     setState(() {});
   }
 
-  void _onTitleTap() {
+  void _onTitleTap() async {
     if (_animationController.isCompleted) {
-      _animationController.reverse();
+      await _animationController.reverse();
     } else {
       _animationController.forward();
     }
+
+    setState(() {
+      _showbarrier = !_showbarrier;
+    });
   }
 
   @override
@@ -169,6 +180,12 @@ class _ActivityScreenState extends State<ActivityScreen>
                 ),
             ],
           ),
+          if (_showbarrier)
+            AnimatedModalBarrier(
+              color: _barrierAnimation,
+              dismissible: true,
+              onDismiss: _onTitleTap,
+            ),
           SlideTransition(
             position: _panelAnimation,
             child: Container(
@@ -199,7 +216,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
