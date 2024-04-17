@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter/src/widgets/scroll_position.dart';
 
 class DiscoverScreen extends StatefulWidget {
   const DiscoverScreen({super.key});
@@ -47,8 +45,6 @@ class _DiscoverScreenState extends State<DiscoverScreen>
     _tabController.addListener(() {
       if (_tabController.indexIsChanging) {
         setState(() {
-          print(_tabController.index);
-          print(_tabController.animation!.value);
           FocusScope.of(context).unfocus();
         });
       }
