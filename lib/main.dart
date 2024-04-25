@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tiktok_clone/features/inbox/chat_detail_screen.dart';
 import 'package:tiktok_clone/features/main_navigation/main_navigation_screen.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class TikTokApp extends StatelessWidget {
           elevation: 0,
           shadowColor: Colors.white,
           backgroundColor: Colors.white,
-          foregroundColor: Colors.white,
+          foregroundColor: Colors.black,
           surfaceTintColor: Colors.white,
           titleTextStyle: TextStyle(
             color: Colors.black,
